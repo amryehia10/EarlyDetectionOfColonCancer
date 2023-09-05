@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ED-CRC</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(https://wallpaperaccess.com/full/3718212.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      h1 {
+        color: #1977cc;
+      }
+      .welcome {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-style: italic;
+        margin: 50px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        color: #1977cc;
+        font-size: larger;
+      }
+
+      .login-container {
+        border-radius: 10px;
+        padding: 20px;
+        margin: 100px auto;
+        max-width: 400px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+        backdrop-filter: blur(5px);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #1977cc;
+      }
+
+      .input {
+        width: 95%;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .mybutton {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #1977cc;
+        color: white;
+      }
+
+      .mybutton:hover {
+        background-color: #055070;
+      }
+      p {
+        color: white;
+      }
+      a {
+        color: white;
+      }
+      #message {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="welcome">
+      <h1>Welcome to ED-CRC</h1>
+    </div>
+
+    <div class="login-container">
+      <h1>Login</h1>
+      <form
+        action="{{ url_for('index') }}"
+        target="_self"
+        id="myform"
+        method="POST"
+      >
+        {{ form.csrf_token }}
+        <div class="form-group">
+          {{ form.email.label }} {{ form.email(type="email", class="input") }}
+        </div>
+
+        <div class="form-group">
+          {{ form.password.label }} {{ form.password(type="password", id="in",
+          class="input", **{'data-testid': 'password'}) }}
+          <input type="checkbox" onclick="myFunction()" />Show Password<br />
+          {% with messages = get_flashed_messages() %} {% if messages %} {% for
+          message in messages %}
+          <strong id="message">{{ message }}</strong>
+          {% endfor %} {% endif %} {% endwith %}
+        </div>
+        <button type="submit" class="mybutton">Login</button>
+      </form>
+
+      <div class="signup-option">
+        <p>Don't have an account?</p>
+        <a href="{{ url_for('signup') }}">Sign Up</a>
+      </div>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById("in");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>

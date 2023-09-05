@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ED-CRC</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/remixicon.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope"></i> <a href="mailto:amr.yehiaz100@gmail.com">amr.yehiaz100@gmail.com</a>
+        <i class="bi bi-phone"></i> +201099027885 
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="#image_class">Early Detection of Colon Cancer</a></h1>
+      
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Patients</a></li>
+          <li><a class="nav-link scrollto" href="#faq">Questions</a></li>
+          <li><a class="nav-link scrollto" href="/addpatient">Add Patient</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/profile">View Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="#image_class" class="appointment-btn scrollto"><span class="d-none d-md-inline">Detect</span></a>
+     
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container">
+      <h1>Welcome to ED-CRC</h1>
+      <h2>Early detection is key to beating colon cancer.</h2>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="content">
+              <h3>Why Choose ED-CRC?</h3>
+              <p>
+                We apply an AI-based imaging decreasing reading times by locating the cancer.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="icon-boxes d-flex flex-column justify-content-center">
+              <div class="row">
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-receipt"></i>
+                    <h4>Technology</h4>
+                    <p>Our AI-powered system uses advanced algorithms to accurately predict whether an input image shows signs of cancer and locate the cancer with high precision.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Expertise</h4>
+                    <p>We use images token by Colonoscopy, and it is a screening tool that used to detect colon cancer early.</p>
+                  </div>
+                </div>
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-images"></i>
+                    <h4>Goal</h4>
+                    <p>We understand that early detection is critical for successful treatment, which is why we have developed this tool to help identify potential cases as early as possible. Our mission is to improve outcomes for patients and make a positive impact in the fight against colon cancer.</p>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End .content-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+          </div>
+          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+            <h3>What is colon cancer ? </h3>
+            <p>Colon cancer is a type of cancer that begins in the large intestine (colon). The colon is the final part of the digestive tract.
+              Colon cancer typically affects older adults, though it can happen at any age.
+              
+              It usually begins as small, noncancerous (benign) clumps of cells called polyps that form on the inside of the colon. Over time some of these polyps can become colon cancers.
+              Polyps may be small and produce few, if any, symptoms. For this reason, doctors recommend regular screening tests to help prevent colon cancer by identifying and removing polyps before they turn into cancer.
+              
+              If colon cancer develops, many treatments are available to help control it, including surgery, radiation therapy and drug treatments, such as chemotherapy, targeted therapy and immunotherapy.
+              Colon cancer is sometimes called colorectal cancer, which is a term that combines colon cancer and rectal cancer, which begins in the rectum</p><br>
+              <h3>What could cause this type of cancer ? </h3>
+              <p>
+                <ul>
+                  <li>It occurs when healthy cells develop errors in their DNA</li>
+                  <li>When the cells' genetic components are mutated, they divide abnormally and accumulate in the colon to form a tumor</li>
+                  <li>With time, the abnormal cells can invade the adjacent tissues and migrate to other organs (metastasis)</li>
+                  <li>Inherited gene mutations increase the risk of developing colon cancer</li>
+                  <li>Inherited colon cancer syndromes include familial adenomatous polyposis (FAP) and hereditary nonpolyposis colorectal cancer (HNPCC). These syndromes are detected through genetic testing</li>
+                </ul>
+              </p><br>
+              <h3>Risk Factors : </h3>
+              <p>
+                <ul>
+                  <li>Older age.</li>
+                  <li>African-American race.</li>
+                  <li>A personal history of colorectal cancer or polyps.</li>
+                  <li>Inflammatory intestinal conditions.</li>
+                  <li>Inherited syndromes that increase colon cancer risk.</li>
+                  <li>Family history of colon cancer.</li>
+                  <li>Low-fiber, high-fat diet.</li>
+                  <li>A sedentary lifestyle.</li>
+                  <li>Diabetes.</li>
+                  <li>Obesity.</li>
+                  <li>Smoking.</li>
+                  <li>Alcohol.</li>
+                  <li>Radiation therapy for cancer.</li>
+                </ul>
+              </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+     <!-- ======= Detect Section ======= -->
+     <section id="image_class" class="appointment section-bg">
+      <h2 id="head">Upload your image to start diagnosing</h2>
+      <div>
+        <form id="upload-file" method="post" enctype="multipart/form-data">
+          <div class="asd">
+          <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            <label for="imageUpload" class="upload-label">
+                Choose...
+            </label>
+          </div>
+        </form>
+        <div id="pred">
+          <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+      </div>
+        <div class="image-section">
+            <div class="img-preview">
+                <div id="imagePreview">
+                </div>
+            </div>
+        </div>
+      <h1 id="result">
+          <span></span>
+      </h1>
+      <div id="pred_img">
+        <div class="loader" style="display:none;"></div>
+        <div id='image-container' class="img_ed "></div>
+      </div>
+    </div>
+    </section><!-- End Detect Section -->
+
+     <!-- ======= Patientlist Section ======= -->
+     <section id="services" class="services">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Patients</h2>
+        </div>
+
+         <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Birth date</th>
+                <th scope="col">Marital status</th>
+                <th scope="col">Medicine</th>
+                <th scope="col">If medicine exist</th>
+                <th scope="col">Status</th>
+                <th scope="col">Report</th>
+                <th scope="col">Operation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for patient in patients %}
+                <tr>
+                  <th scope="row">{{ loop.index }}</th>
+                  <td>{{ patient.pname }}</td>
+                  <td>{{ patient.pemail }}</td>
+                  <td>{{ patient.pphone }}</td>
+                  <td>{{ patient.sex }}</td>
+                  <td>{{ patient.pbirth }}</td>
+                  <td>{{ patient.pmarital }}</td>
+                  <td>{{ patient.pmedicine }}</td>
+                  <td>{{ patient.ifmedicine }}</td>
+                  <td>{{ patient.pstatus }}</td>
+                  <td>{{ patient.report }}</td>
+                  <td><a href="{{ url_for('update', patient_id=patient.pid) }}">Update</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+    </section><!-- End Patientlist Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>These are the most frequent questions, we try to answer them</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Does this website provide diagnoses  for all types of cancer? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                 No, This website is used for colon cancer only.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Can the input image be any type rather than Colonoscopy?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  No, It must be from colonoscopy.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What is the dataset used to train the models? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  In classification, we used KVASIR dataset. We chose the classes that is related to the colon cancer. In segmentation, we used Kvasir-seg, Hyper-Kvasir, CVC-612.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">What AI techniques we used to get this results? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  We used classification models as VGG16 and Resnet50, and segmentation techniques as U-net, VGG16-U-net, ResU-net and ResU-net++. 
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Our Doctors and samples of Kvasir dataset</p>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-1.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-1.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-2.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-2.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-3.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-3.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-4.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-4.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-5.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-5.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-6.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-6.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-7.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-7.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="{{ url_for('static', filename='img/gallery-8.jpg') }}" class="galelry-lightbox">
+                <img src="{{ url_for('static', filename='img/gallery-8.jpg') }}" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ED-CRC</h3>
+            <p>
+              Faculty of computers and Artificial Intelligence, <br>
+              Dokki,<br>
+              Egypt <br><br>
+              <strong>Phone:</strong> +201099027885 | +201205415433 | +201555855529 | +201097687792 | +201141652178<br>
+              <strong>Emails:</strong> amr.yehiaz100@gmail.com | gamalhanafi26@gmail.com | mahmoudkhaled225@gmail.com | mohamedramdan10.2001@gmail.com | yomnafarid2001@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> Artificial Intelligence</a></li>
+              <li><i class="bx bx-chevron-right"></i> Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> Bioinformatics</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ED-CRC</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <footer>
+    <script src="{{ url_for('static', filename='js/detect.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> 
+    <script src="{{ url_for('static', filename='js/purecounter_vanilla.js') }}" type="text/javascript"></script>       
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>       
+    <script src="{{ url_for('static', filename='js/glightbox.min.js') }}" type="text/javascript"></script>       
+    <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}" type="text/javascript"></script>       
+    <script src="{{ url_for('static', filename='js/validate.js') }}" type="text/javascript"></script>              
+   
+  </footer>
+
+</body>
+
+</html>

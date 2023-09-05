@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Patient</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='css/all.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
+    <style>
+        
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(https://wallpaperaccess.com/full/7932161.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 0 0 0 200px;
+      }
+      .form-con {
+        color: black;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 100px auto;
+        max-width: 400px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+        backdrop-filter: blur(5px);
+      }
+      .form-group {
+        margin-bottom: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bold;
+        color: black;
+      }
+
+      .input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .mybutton {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #2671da;
+        color: white;
+      }
+
+      .mybutton:hover {
+        background-color: #055070;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+      <h1>Update Patient</h1>
+      <div class="col-lg-8 mt-5 mt-lg-0">
+      <form method="POST" action="{{ url_for('update', patient_id=patient_id) }}">
+        {{ form.csrf_token }}
+        <input type="hidden" name="csrf_token" value="{{ form.csrf_token._value() }}">
+        <input type="hidden" name="patient_id" value="{{ patient.pid }}">
+        <div class="row">
+          <div class="col-md-6 form-group">
+            {{ form.name.label }} {{ form.name(class="input", value=patient.pname) }}
+          </div>
+          <div class="col-md-6 form-group">
+            {{ form.sex.label }} {{ form.sex(class="input", value=patient.sex) }}
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-md-6 form-group">
+          {{ form.email.label }} {{ form.email(class="input", value=patient.pemail) }}
+        </div>
+        <div class="col-md-6 form-group">
+          {{ form.phone.label }} {{ form.phone(class="input", value=patient.pphone) }}
+        </div>
+      </div>
+      <div class="row"> 
+        <div class="col-md-6 form-group">
+          {{ form.birthdate.label }} {{ form.birthdate(class="input", value=patient.pbirth) }}
+        </div>
+        <div class="col-md-6 form-group">
+          {{ form.marital_status.label }} {{ form.marital_status(class="input", value=patient.pmarital) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          {{ form.medicine.label }} {{ form.medicine(class="input", value=patient.pmedicine) }}
+        </div>
+        <div class="col-md-6 form-group">
+          {{ form.status.label }} {{ form.status(class="input", value=patient.pstatus) }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 form-group">
+          {{ form.if_medicine.label }} {{ form.if_medicine(class="input", value=patient.ifmedicine) }}
+        </div>
+        <div class="col-md-6 form-group">
+          {{ form.report.label }} {{ form.report(class="input", value=patient.report) }}
+        </div>
+      </div>
+        <button type="submit" class="mybutton">Update</button>
+      </form>
+      <br><a href="{{ url_for('home') }}" class="mybutton">Back</a>
+    </div>
+    </div>
+    </div>
+    <footer>
+      <script src="{{ url_for('static', filename='js/detect.js') }}" type="text/javascript"></script>
+      <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> 
+      <script src="{{ url_for('static', filename='js/purecounter_vanilla.js') }}" type="text/javascript"></script>       
+      <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}" type="text/javascript"></script>       
+      <script src="{{ url_for('static', filename='js/glightbox.min.js') }}" type="text/javascript"></script>       
+      <script src="{{ url_for('static', filename='js/swiper-bundle.min.js') }}" type="text/javascript"></script>       
+      <script src="{{ url_for('static', filename='js/validate.js') }}" type="text/javascript"></script>              
+     
+    </footer>
+  </body>
+</html>

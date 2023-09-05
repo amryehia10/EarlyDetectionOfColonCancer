@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-up</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+        
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(https://wallpaperaccess.com/full/3718211.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        
+      }
+      .form-con {
+        color: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 100px auto;
+        max-width: 400px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+        backdrop-filter: blur(5px);
+      }
+      .form-group {
+        margin-bottom: 20px;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bold;
+        color: white;
+      }
+
+      .input {
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .mybutton {
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #2671da;
+        color: white;
+      }
+
+      .mybutton:hover {
+        background-color: #055070;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-con">
+    <h1>Sign up</h1>
+      <form target="_self" action="{{ url_for('signup') }}" id="myform" method="POST">
+        {{ form.csrf_token }}
+        <input type="hidden" name="csrf_token" value="{{ form.csrf_token._value() }}">
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email(class="input", type="email", **{'data-testid': 'email'}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form.name.label }}
+            {{ form.name(class="input", **{'data-testid': 'name'}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form.phone.label }}
+            {{ form.phone(class="input", **{'data-testid': 'phone'}) }}
+        </div>
+
+        <div class="form-group">
+          {{ form.specialization.label }}
+          {{ form.specialization(class="input", **{'data-testid': 'specialization'}) }}
+      </div>
+
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(type="password", id="in" ,class="input", **{'data-testid': 'password'}) }}
+        </div>
+        <input
+        type="checkbox"
+        id="agree-to-terms"
+        name="agree-to-terms"
+        required
+      />
+      <label for="agree-to-terms" id="agree"
+        >I agree to the terms and conditions</label
+      ><br><br>
+        <button type="submit" class="mybutton">Sign Up</button>
+        <input type="reset" value="Reset" class="mybutton">
+      </form>
+    </div>
+
+    <script>
+       function myFunction() {
+        var x = document.getElementById("in");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+    </script>
+  </body>
+</html>
