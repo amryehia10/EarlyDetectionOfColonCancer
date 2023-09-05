@@ -2,7 +2,7 @@
 > - Develop an early detection system for colon cancer using classification and segmentation techniques, specifically semantic segmentation to identify and analyze suspicious regions of the colon which will help in solving the high incidence and mortality rates of colon cancer, which is one of the most common types of cancer worldwide.
 > - Our data collection, consisting of the Kvasir and CVC-612 datasets, has enabled us to develop highly accurate models to solve the classification and segmentation problems in colon cancer detection.
 > - In the modeling phase, the data is preprocessed, augmented, cleaned, and transformed to be used as input for the model. After completing the modeling phase, we implemented both VGG16 and Resnet50 models to detect if the input image is normal or polyp, achieving an impressive accuracy rate of 99.5%.
-> - ![alt text](ResNet.jpg)
+> - ![alt text](Resnet.png)
 > - In the second sub-phase of implementation, we tackled the segmentation problem to locate the tumor by developing U-net, Res-Unet, and Res-Unet++ models, which allowed us to reach the full potential of our models with a mean IoU of 91% and a dice coefficient of 95%.
 > - ![alt text](ResUNet++.png)
 > - Our results demonstrate the strength and effectiveness of our approach and pave the way for further advancements in early detection and treatment of colon cancer.
