@@ -7,5 +7,5 @@
 > - ![alt text](ResUNet++.png)
 > - Our results demonstrate the strength and effectiveness of our approach and pave the way for further advancements in early detection and treatment of colon cancer.
 > - By adhering to the highest coding standards and leveraging state-of-the-art techniques for analyzing and designing system components, we have created a website interface that is incredibly scalable, maintainable, and reliable. Our website simplifies the process of dealing with our full pipeline, making it easier for doctors to analyze and diagnose potential cases of colon cancer. Our unwavering commitment to excellence ensures that our website is a robust, user-friendly, and indispensable tool for healthcare professionals around the world.
-> - ![alt text](process.jpg)
+> - ![alt text](process.png)
 > - To take our project to the next level, we can incorporate additional metrics such as tumor size and percent survival. By including these measures, we can provide more detailed and accurate information to healthcare professionals, enabling them to make more informed decisions about treatment options and improving patient outcomes.
