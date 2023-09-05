@@ -4,7 +4,7 @@
 > - In the modeling phase, the data is preprocessed, augmented, cleaned, and transformed to be used as input for the model. After completing the modeling phase, we implemented both VGG16 and Resnet50 models to detect if the input image is normal or polyp, achieving an impressive accuracy rate of 99.5%.
 > - ![alt text](ResNet.jpg)
 > - In the second sub-phase of implementation, we tackled the segmentation problem to locate the tumor by developing U-net, Res-Unet, and Res-Unet++ models, which allowed us to reach the full potential of our models with a mean IoU of 91% and a dice coefficient of 95%.
-> - ![alt text](ResUNet++.jpg)
+> - ![alt text](ResUNet++.png)
 > - Our results demonstrate the strength and effectiveness of our approach and pave the way for further advancements in early detection and treatment of colon cancer.
 > - By adhering to the highest coding standards and leveraging state-of-the-art techniques for analyzing and designing system components, we have created a website interface that is incredibly scalable, maintainable, and reliable. Our website simplifies the process of dealing with our full pipeline, making it easier for doctors to analyze and diagnose potential cases of colon cancer. Our unwavering commitment to excellence ensures that our website is a robust, user-friendly, and indispensable tool for healthcare professionals around the world.
 > - ![alt text](process.jpg)
